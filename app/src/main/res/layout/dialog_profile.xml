@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_page">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top bar: close button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Профиль"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_strong" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_close"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="✕"
+                android:textSize="18sp"
+                style="@style/Widget.App.Button.Ghost" />
+        </LinearLayout>
+
+        <!-- Not logged in state -->
+        <LinearLayout
+            android:id="@+id/layout_not_logged"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вы не вошли в аккаунт"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_strong" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/login"
+                style="@style/Widget.App.Button.Primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_register"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/register"
+                style="@style/Widget.App.Button.Ghost" />
+        </LinearLayout>
+
+        <!-- Logged in state -->
+        <LinearLayout
+            android:id="@+id/layout_logged"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- User info card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/border"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Round avatar -->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_avatar"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:scaleType="centerCrop"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_strong" />
+
+                        <TextView
+                            android:id="@+id/tv_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_muted" />
+
+                        <TextView
+                            android:id="@+id/tv_role"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            style="@style/Badge.Primary" />
+                    </LinearLayout>
+
+                    <!-- Change avatar button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_change_avatar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="📷"
+                        android:textSize="18sp"
+                        style="@style/Widget.App.Button.Ghost" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Create project (visible for all logged users) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_create_project"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/create_project"
+                android:visibility="gone"
+                style="@style/Widget.App.Button.Accent" />
+
+            <!-- My projects section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Мои проекты"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_strong" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_my_projects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Donations section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Мои пожертвования"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_strong" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_donations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- My volunteer applications (for regular users) -->
+            <LinearLayout
+                android:id="@+id/layout_my_applications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="24dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Мои заявки на волонтёрство"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_my_applications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+
+            <!-- Fund section: volunteer tasks list (only for fund reps) -->
+            <LinearLayout
+                android:id="@+id/layout_fund_tasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="24dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Волонтёрские задачи фонда"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_fund_tasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+
+            <!-- Fund section: volunteer task management (only for fund reps) -->
+            <LinearLayout
+                android:id="@+id/layout_fund_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Управление фондом"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_create_task"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Создать волонтёрскую задачу"
+                    android:visibility="gone"
+                    style="@style/Widget.App.Button.Primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Заявки волонтёров"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_fund_applications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+
+            <!-- Admin panel (only for admins) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_admin"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:text="Панель администратора"
+                android:visibility="gone"
+                style="@style/Widget.App.Button.Primary" />
+
+            <!-- Logout -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/logout"
+                android:textColor="@color/danger"
+                app:backgroundTint="@color/danger_soft"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

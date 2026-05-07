@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_page">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="О платформе"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_strong" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="ДоброВместе — это централизованная платформа, которая объединяет доноров, волонтёров и благотворительные фонды для решения важных социальных задач по всей России."
+            android:textSize="16sp"
+            android:textColor="@color/text_body"
+            android:lineSpacingMultiplier="1.4" />
+
+        <!-- How it works -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/how_it_works"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_strong" />
+
+        <!-- Step 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:background="@drawable/bg_badge_primary" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Выберите проект"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Просмотрите каталог проектов и выберите тот, который вам близок"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_muted" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Step 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:background="@drawable/bg_badge_primary" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Сделайте вклад"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Пожертвуйте средства или станьте волонтёром"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_muted" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Step 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:background="@drawable/bg_badge_primary" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Видите результат"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Отслеживайте прогресс и оставляйте отзывы"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_muted" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Contact -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/border"
+            app:cardElevation="0dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Контакты"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="info@dobrovmeste.ru\nМосква, Россия\n\nМы ответим в течение 24 часов."
+                    android:textSize="14sp"
+                    android:textColor="@color/text_muted"
+                    android:lineSpacingMultiplier="1.4" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:text="Присоединиться"
+            style="@style/Widget.App.Button.Accent" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

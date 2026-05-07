@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">ДоброВместе</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Главная</string>
+    <string name="nav_projects">Проекты</string>
+    <string name="nav_volunteers">Волонтёрство</string>
+    <string name="nav_funds">Фонды</string>
+    <string name="nav_about">О нас</string>
+    <string name="nav_profile">Профиль</string>
+    <string name="nav_admin">Админ</string>
+
+    <!-- Auth -->
+    <string name="login">Войти</string>
+    <string name="register">Регистрация</string>
+    <string name="logout">Выйти</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="full_name">Полное имя</string>
+    <string name="city">Город</string>
+    <string name="role">Роль</string>
+    <string name="role_donor">Донор</string>
+    <string name="role_volunteer">Волонтёр</string>
+    <string name="role_fund">Фонд</string>
+
+    <!-- Actions -->
+    <string name="donate">Помочь</string>
+    <string name="details">Подробнее</string>
+    <string name="create_project">Создать проект</string>
+    <string name="apply">Подать заявку</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="send">Отправить</string>
+    <string name="export_csv">Экспорт в CSV</string>
+    <string name="leave_review">Оставить отзыв</string>
+    <string name="edit_project">Редактировать</string>
+
+    <!-- Misc -->
+    <string name="days_left">дн. осталось</string>
+    <string name="collected_of">собрано из</string>
+    <string name="rub">₽</string>
+    <string name="verified">Верифицирован</string>
+    <string name="urgent">Срочно</string>
+    <string name="search_hint">Поиск проектов…</string>
+    <string name="all_categories">Все категории</string>
+    <string name="sort_by">Сортировка</string>
+    <string name="demo_email">demo@dobrovmeste.ru</string>
+    <string name="demo_password">demo</string>
+
+    <!-- Home page -->
+    <string name="hero_title">Вместе мы можем\nбольше</string>
+    <string name="hero_subtitle">Объединяем людей, фонды и волонтёров для решения\nважных социальных задач по всей России</string>
+    <string name="help_now">Помочь сейчас</string>
+    <string name="how_it_works">Как это работает</string>
+    <string name="our_projects">Наши проекты</string>
+    <string name="testimonials">Отзывы участников</string>
+
+    <!-- Messages -->
+    <string name="need_login">Пожалуйста, войдите или зарегистрируйтесь.</string>
+    <string name="login_success">Вы успешно вошли!</string>
+    <string name="register_success">Регистрация прошла успешно!</string>
+    <string name="logout_success">Вы вышли из аккаунта.</string>
+    <string name="donate_success">Спасибо за пожертвование!</string>
+    <string name="review_success">Отзыв отправлен!</string>
+    <string name="apply_success">Заявка отправлена! Организатор свяжется с вами в течение 24 часов.</string>
+    <string name="already_applied">Вы уже подавали заявку на эту задачу.</string>
+    <string name="partner_request">Спасибо за интерес! Наша команда свяжется с вами в течение 48 часов.</string>
+</resources>

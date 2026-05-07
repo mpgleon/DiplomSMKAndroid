@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_strong" />
+
+            <TextView
+                android:id="@+id/tv_verified"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✓ Верифицирован"
+                android:visibility="gone"
+                style="@style/Badge.Success" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_city_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:textColor="@color/text_dim" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="15sp"
+            android:textColor="@color/text_body"
+            android:lineSpacingMultiplier="1.4" />
+
+        <!-- Stats -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card_rounded"
+                android:padding="16dp"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:id="@+id/tv_people_helped"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <TextView
+                    android:id="@+id/tv_helped_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dim" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card_rounded"
+                android:padding="16dp"
+                android:layout_marginStart="6dp">
+
+                <TextView
+                    android:id="@+id/tv_volunteers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="волонтёров"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dim" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Fund's projects -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Проекты фонда"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_strong" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_projects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false" />
+
+    </LinearLayout>
+</ScrollView>

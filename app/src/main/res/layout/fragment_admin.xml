@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_page">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Панель администратора"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_strong" />
+
+        <!-- Access denied message (shown for non-admins) -->
+        <TextView
+            android:id="@+id/tv_access_denied"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Доступ запрещён. Только для администраторов."
+            android:textSize="15sp"
+            android:textColor="@color/danger"
+            android:visibility="gone" />
+
+        <!-- Admin content -->
+        <LinearLayout
+            android:id="@+id/layout_admin_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Statistics dashboard -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Статистика платформы"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_strong" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/border"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:gravity="center">
+                        <TextView android:id="@+id/stat_users" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textSize="22sp" android:textStyle="bold" android:textColor="@color/primary" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Пользователей" android:textSize="11sp" android:textColor="@color/text_dim" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/border"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:gravity="center">
+                        <TextView android:id="@+id/stat_projects" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textSize="22sp" android:textStyle="bold" android:textColor="@color/accent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Проектов" android:textSize="11sp" android:textColor="@color/text_dim" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/border"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:gravity="center">
+                        <TextView android:id="@+id/stat_donations" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textSize="22sp" android:textStyle="bold" android:textColor="@color/success_dark" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Пожертвований" android:textSize="11sp" android:textColor="@color/text_dim" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Users management -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Пользователи"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_strong" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_users"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Projects moderation -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Модерация проектов"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_strong" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_projects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Volunteer tasks moderation -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Модерация волонтёрских задач"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_strong" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_volunteer_tasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Funds verification -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Верификация фондов"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_strong" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_funds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_page">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Hero Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="@color/primary_bg"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="БЛАГОТВОРИТЕЛЬНАЯ ПЛАТФОРМА"
+                android:textColor="@color/primary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hero_title"
+                android:textColor="@color/text_strong"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hero_subtitle"
+                android:textColor="@color/text_muted"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginTop="12dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_help_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/help_now"
+                    style="@style/Widget.App.Button.Accent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_create_project"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/create_project"
+                    android:layout_marginStart="12dp"
+                    style="@style/Widget.App.Button.Ghost" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Stats Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card_rounded"
+                android:padding="16dp"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:id="@+id/stat_donations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₽0"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Собрано"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dim" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card_rounded"
+                android:padding="16dp"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:id="@+id/stat_users"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Участников"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dim" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card_rounded"
+                android:padding="16dp"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:id="@+id/stat_projects"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_strong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Проектов"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_dim" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Projects Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/our_projects"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_strong"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="24dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_projects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:padding="12dp" />
+
+        <!-- Testimonials Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/testimonials"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_strong"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="24dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_testimonials"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Оставить отзыв"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_strong" />
+
+    <!-- Star rating -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Оценка: "
+            android:textSize="15sp"
+            android:textColor="@color/text_body" />
+
+        <TextView
+            android:id="@+id/tv_star_1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="★"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:textColor="@color/border" />
+        <TextView
+            android:id="@+id/tv_star_2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="★"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:textColor="@color/border" />
+        <TextView
+            android:id="@+id/tv_star_3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="★"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:textColor="@color/border" />
+        <TextView
+            android:id="@+id/tv_star_4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="★"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:textColor="@color/border" />
+        <TextView
+            android:id="@+id/tv_star_5"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="★"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:textColor="@color/border" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Ваш отзыв (необязательно)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_review_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:gravity="top" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/send"
+        style="@style/Widget.App.Button.Primary" />
+
+</LinearLayout>

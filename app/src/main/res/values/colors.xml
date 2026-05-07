@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary palette from theme.py -->
+    <color name="primary">#FF2563EB</color>
+    <color name="primary_dark">#FF1D4ED8</color>
+    <color name="primary_soft">#FFDBEAFE</color>
+    <color name="primary_bg">#FFEFF6FF</color>
+
+    <!-- Accent (CTA) -->
+    <color name="accent">#FFF59E0B</color>
+    <color name="accent_dark">#FFD97706</color>
+    <color name="accent_soft">#FFFEF3C7</color>
+
+    <!-- Success -->
+    <color name="success">#FF10B981</color>
+    <color name="success_soft">#FFD1FAE5</color>
+    <color name="success_dark">#FF059669</color>
+
+    <!-- Danger -->
+    <color name="danger">#FFEF4444</color>
+    <color name="danger_soft">#FFFEE2E2</color>
+    <color name="danger_dark">#FFDC2626</color>
+
+    <!-- Warning -->
+    <color name="warning_soft">#FFFEF3C7</color>
+    <color name="warning_dark">#FFD97706</color>
+
+    <!-- Text -->
+    <color name="text_strong">#FF111827</color>
+    <color name="text_body">#FF1F2937</color>
+    <color name="text_muted">#FF4B5563</color>
+    <color name="text_dim">#FF6B7280</color>
+    <color name="text_light">#FF9CA3AF</color>
+
+    <!-- Backgrounds -->
+    <color name="bg_page">#FFFFFFFF</color>
+    <color name="bg_soft">#FFF9FAFB</color>
+    <color name="bg_card">#FFFFFFFF</color>
+    <color name="border">#FFE5E7EB</color>
+    <color name="bg_input">#FFF3F4F6</color>
+
+    <!-- Footer -->
+    <color name="footer_bg">#FF1E3A5F</color>
+
+    <!-- Category colors -->
+    <color name="cat_medicine_bg">#FFFEE2E2</color>
+    <color name="cat_medicine_fg">#FFDC2626</color>
+    <color name="cat_ecology_bg">#FFD1FAE5</color>
+    <color name="cat_ecology_fg">#FF059669</color>
+    <color name="cat_animals_bg">#FFFEF3C7</color>
+    <color name="cat_animals_fg">#FFD97706</color>
+    <color name="cat_education_bg">#FFEDE9FE</color>
+    <color name="cat_education_fg">#FF7C3AED</color>
+    <color name="cat_elderly_bg">#FFFCE7F3</color>
+    <color name="cat_elderly_fg">#FFDB2777</color>
+    <color name="cat_culture_bg">#FFEDE9FE</color>
+    <color name="cat_culture_fg">#FF7C3AED</color>
+
+    <!-- Basics -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
