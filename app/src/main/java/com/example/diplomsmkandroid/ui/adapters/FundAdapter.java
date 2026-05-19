@@ -3,15 +3,18 @@ package com.example.diplomsmkandroid.ui.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.diplomsmkandroid.R;
 import com.example.diplomsmkandroid.data.entity.FundEntity;
 import com.google.android.material.button.MaterialButton;
 
+import java.io.File;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +63,20 @@ public class FundAdapter extends RecyclerView.Adapter<FundAdapter.ViewHolder> {
             h.tvVerified.setVisibility(View.GONE);
         }
 
+        // Cover image
+        if (f.coverPath != null && !f.coverPath.isEmpty()) {
+            h.ivCover.setVisibility(View.VISIBLE);
+            Object source = f.coverPath.startsWith("http") || f.coverPath.startsWith("content://")
+                    ? f.coverPath : new File(f.coverPath);
+            Glide.with(h.itemView.getContext())
+                    .load(source)
+                    .centerCrop()
+                    .into(h.ivCover);
+        } else {
+            h.ivCover.setVisibility(View.GONE);
+            Glide.with(h.itemView.getContext()).clear(h.ivCover);
+        }
+
         h.btnDetails.setOnClickListener(v -> {
             if (listener != null) listener.onDetails(f.id);
         });
@@ -71,11 +88,13 @@ public class FundAdapter extends RecyclerView.Adapter<FundAdapter.ViewHolder> {
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView ivCover;
         TextView tvName, tvVerified, tvCityYear, tvDescription, tvPeopleHelped, tvHelpedLabel, tvVolunteers;
         MaterialButton btnDetails;
 
         ViewHolder(View v) {
             super(v);
+            ivCover = v.findViewById(R.id.iv_cover);
             tvName = v.findViewById(R.id.tv_name);
             tvVerified = v.findViewById(R.id.tv_verified);
             tvCityYear = v.findViewById(R.id.tv_city_year);

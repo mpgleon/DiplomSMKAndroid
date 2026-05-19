@@ -25,6 +25,9 @@ public interface FundDao {
     @Query("SELECT * FROM funds")
     List<FundEntity> getAllSync();
 
+    @Query("SELECT * FROM funds LIMIT :limit OFFSET :offset")
+    List<FundEntity> getPageSync(int limit, int offset);
+
     @Query("SELECT * FROM funds WHERE id = :id LIMIT 1")
     FundEntity getById(int id);
 

@@ -33,4 +33,7 @@ public class FundEntity {
 
     @ColumnInfo(name = "volunteers_count", defaultValue = "0")
     public int volunteersCount;
+
+    @ColumnInfo(name = "cover_path")
+    public String coverPath;
 }

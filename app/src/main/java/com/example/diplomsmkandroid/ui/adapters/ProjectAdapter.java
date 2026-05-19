@@ -1,6 +1,5 @@
 package com.example.diplomsmkandroid.ui.adapters;
 
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.diplomsmkandroid.R;
 import com.example.diplomsmkandroid.data.entity.ProjectEntity;
 import com.google.android.material.button.MaterialButton;
@@ -78,17 +78,15 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
         // Cover image
         if (p.coverPath != null && !p.coverPath.isEmpty()) {
             h.ivCover.setVisibility(View.VISIBLE);
-            try {
-                if (p.coverPath.startsWith("content://") || p.coverPath.startsWith("http")) {
-                    h.ivCover.setImageURI(Uri.parse(p.coverPath));
-                } else {
-                    h.ivCover.setImageURI(Uri.fromFile(new File(p.coverPath)));
-                }
-            } catch (Exception e) {
-                h.ivCover.setVisibility(View.GONE);
-            }
+            Object source = p.coverPath.startsWith("http") || p.coverPath.startsWith("content://")
+                    ? p.coverPath : new File(p.coverPath);
+            Glide.with(h.itemView.getContext())
+                    .load(source)
+                    .centerCrop()
+                    .into(h.ivCover);
         } else {
             h.ivCover.setVisibility(View.GONE);
+            Glide.with(h.itemView.getContext()).clear(h.ivCover);
         }
 
         // Rating

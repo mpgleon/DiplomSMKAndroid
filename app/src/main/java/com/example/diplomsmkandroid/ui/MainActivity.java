@@ -12,6 +12,7 @@ import com.example.diplomsmkandroid.data.AppDatabase;
 import com.example.diplomsmkandroid.data.DatabaseSeeder;
 import com.example.diplomsmkandroid.data.entity.UserEntity;
 import com.example.diplomsmkandroid.ui.profile.ProfileDialogFragment;
+import com.example.diplomsmkandroid.util.SecurityUtil;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -38,9 +39,10 @@ public class MainActivity extends AppCompatActivity {
         navController = navHostFragment.getNavController();
         NavigationUI.setupWithNavController(bottomNav, navController);
 
-        // Seed database in background
+        // Ensure admin exists and seed database in background
         new Thread(() -> {
             AppDatabase db = AppDatabase.getInstance(getApplicationContext());
+            DatabaseSeeder.ensureAdminExists(db);
             DatabaseSeeder.seedIfEmpty(db);
         }).start();
 
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 showLoginDialog();
             }
         });
+
     }
 
     public void showProfileDialog() {

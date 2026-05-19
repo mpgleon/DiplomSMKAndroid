@@ -59,6 +59,9 @@ public interface ProjectDao {
     @Query("SELECT * FROM projects ORDER BY created_at DESC")
     List<ProjectEntity> getAllSync();
 
+    @Query("SELECT * FROM projects ORDER BY created_at DESC LIMIT :limit OFFSET :offset")
+    List<ProjectEntity> getPageSync(int limit, int offset);
+
     @Query("SELECT * FROM projects WHERE creator_id = :creatorId ORDER BY created_at DESC")
     List<ProjectEntity> getByCreatorSync(int creatorId);
 

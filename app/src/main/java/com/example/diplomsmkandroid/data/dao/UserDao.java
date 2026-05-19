@@ -31,6 +31,9 @@ public interface UserDao {
     @Query("SELECT * FROM users ORDER BY created_at DESC")
     List<UserEntity> getAllSync();
 
+    @Query("SELECT * FROM users ORDER BY created_at DESC LIMIT :limit OFFSET :offset")
+    List<UserEntity> getPageSync(int limit, int offset);
+
     @Query("SELECT COUNT(*) FROM users")
     int getCount();
 }

@@ -26,6 +26,9 @@ public interface VolunteerTaskDao {
     @Query("SELECT * FROM volunteer_tasks")
     List<VolunteerTaskEntity> getAllSync();
 
+    @Query("SELECT * FROM volunteer_tasks LIMIT :limit OFFSET :offset")
+    List<VolunteerTaskEntity> getPageSync(int limit, int offset);
+
     @Query("SELECT * FROM volunteer_tasks WHERE id = :id LIMIT 1")
     VolunteerTaskEntity getById(int id);
 

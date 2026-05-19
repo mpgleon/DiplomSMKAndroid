@@ -7,6 +7,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Cover image -->
+        <ImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp">
 
@@ -128,5 +141,6 @@
             android:layout_marginTop="8dp"
             android:nestedScrollingEnabled="false" />
 
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>

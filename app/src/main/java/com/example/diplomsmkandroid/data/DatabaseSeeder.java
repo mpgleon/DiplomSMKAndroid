@@ -134,8 +134,11 @@ public final class DatabaseSeeder {
         user.city = "Москва";
         user.createdAt = System.currentTimeMillis();
         db.userDao().insert(user);
+    }
 
-        // Admin user
+    public static void ensureAdminExists(AppDatabase db) {
+        if (db.userDao().getByEmail("admin@dobrovmeste.ru") != null) return;
+
         UserEntity admin = new UserEntity();
         admin.email = "admin@dobrovmeste.ru";
         admin.passwordHash = SecurityUtil.hashPassword("admin123");

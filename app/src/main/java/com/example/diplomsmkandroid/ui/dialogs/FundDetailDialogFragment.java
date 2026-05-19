@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.diplomsmkandroid.R;
 import com.example.diplomsmkandroid.data.AppDatabase;
 import com.example.diplomsmkandroid.data.entity.FundEntity;
@@ -48,6 +50,7 @@ public class FundDetailDialogFragment extends DialogFragment {
         int fundId = getArguments().getInt(ARG_FUND_ID);
         NumberFormat fmt = NumberFormat.getNumberInstance(new Locale("ru"));
 
+        ImageView ivCover = view.findViewById(R.id.iv_cover);
         TextView tvName = view.findViewById(R.id.tv_name);
         TextView tvVerified = view.findViewById(R.id.tv_verified);
         TextView tvCityYear = view.findViewById(R.id.tv_city_year);
@@ -87,6 +90,18 @@ public class FundDetailDialogFragment extends DialogFragment {
                     tvHelpedLabel.setText(fund.peopleHelpedLabel);
                     tvVolunteers.setText(String.valueOf(fund.volunteersCount));
                     tvVerified.setVisibility(fund.verified ? View.VISIBLE : View.GONE);
+
+                    // Cover image
+                    if (fund.coverPath != null && !fund.coverPath.isEmpty()) {
+                        ivCover.setVisibility(View.VISIBLE);
+                        Object source = fund.coverPath.startsWith("http") || fund.coverPath.startsWith("content://")
+                                ? fund.coverPath : new java.io.File(fund.coverPath);
+                        Glide.with(requireContext())
+                                .load(source)
+                                .centerCrop()
+                                .into(ivCover);
+                    }
+
                     projectAdapter.setItems(projects);
                 });
             }

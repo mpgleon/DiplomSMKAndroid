@@ -1,7 +1,6 @@
 package com.example.diplomsmkandroid.ui.dialogs;
 
 import android.app.Dialog;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +16,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.diplomsmkandroid.R;
 import com.example.diplomsmkandroid.data.AppDatabase;
 import com.example.diplomsmkandroid.data.entity.ProjectEntity;
@@ -27,7 +27,6 @@ import com.example.diplomsmkandroid.ui.adapters.ReviewAdapter;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.io.File;
 import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.List;
@@ -108,15 +107,12 @@ public class ProjectDetailDialogFragment extends DialogFragment {
                     // Cover image
                     if (p.coverPath != null && !p.coverPath.isEmpty()) {
                         ivCover.setVisibility(View.VISIBLE);
-                        try {
-                            if (p.coverPath.startsWith("content://") || p.coverPath.startsWith("http")) {
-                                ivCover.setImageURI(Uri.parse(p.coverPath));
-                            } else {
-                                ivCover.setImageURI(Uri.fromFile(new File(p.coverPath)));
-                            }
-                        } catch (Exception e) {
-                            ivCover.setVisibility(View.GONE);
-                        }
+                        Object source = p.coverPath.startsWith("http") || p.coverPath.startsWith("content://")
+                                ? p.coverPath : new java.io.File(p.coverPath);
+                        Glide.with(requireContext())
+                                .load(source)
+                                .centerCrop()
+                                .into(ivCover);
                     }
 
                     if (reviewsCount > 0) {

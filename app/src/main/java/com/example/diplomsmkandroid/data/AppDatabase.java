@@ -19,7 +19,7 @@ import com.example.diplomsmkandroid.data.entity.*;
         SubscriberEntity.class,
         ReviewEntity.class,
         VolunteerApplicationEntity.class
-}, version = 3, exportSchema = false)
+}, version = 4, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static volatile AppDatabase INSTANCE;
@@ -48,5 +48,18 @@ public abstract class AppDatabase extends RoomDatabase {
             }
         }
         return INSTANCE;
+    }
+
+    public static void closeAndReset() {
+        synchronized (AppDatabase.class) {
+            if (INSTANCE != null) {
+                INSTANCE.close();
+                INSTANCE = null;
+            }
+        }
+    }
+
+    public void checkpoint() {
+        getOpenHelper().getWritableDatabase().query("PRAGMA wal_checkpoint(TRUNCATE)");
     }
 }

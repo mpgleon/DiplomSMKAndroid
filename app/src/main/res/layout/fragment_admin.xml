@@ -123,6 +123,34 @@
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_export_db"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Экспорт БД"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    app:strokeColor="@color/primary"
+                    android:textColor="@color/primary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_import_db"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Импорт БД"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    app:strokeColor="@color/primary"
+                    android:textColor="@color/primary" />
+            </LinearLayout>
+
             <!-- Users management -->
             <TextView
                 android:layout_width="wrap_content"
@@ -139,6 +167,40 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:nestedScrollingEnabled="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_users_prev"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="\u25C0"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/primary"
+                    android:textColor="@color/primary" />
+                <TextView
+                    android:id="@+id/tv_users_page"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_muted" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_users_next"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="\u25B6"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/primary"
+                    android:textColor="@color/primary" />
+            </LinearLayout>
 
             <!-- Projects moderation -->
             <TextView
@@ -157,6 +219,40 @@
                 android:layout_marginTop="8dp"
                 android:nestedScrollingEnabled="false" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_projects_prev"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="\u25C0"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/primary"
+                    android:textColor="@color/primary" />
+                <TextView
+                    android:id="@+id/tv_projects_page"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_muted" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_projects_next"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="\u25B6"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/primary"
+                    android:textColor="@color/primary" />
+            </LinearLayout>
+
             <!-- Volunteer tasks moderation -->
             <TextView
                 android:layout_width="wrap_content"
@@ -174,6 +270,40 @@
                 android:layout_marginTop="8dp"
                 android:nestedScrollingEnabled="false" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_tasks_prev"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="\u25C0"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/primary"
+                    android:textColor="@color/primary" />
+                <TextView
+                    android:id="@+id/tv_tasks_page"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_muted" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_tasks_next"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="\u25B6"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/primary"
+                    android:textColor="@color/primary" />
+            </LinearLayout>
+
             <!-- Funds verification -->
             <TextView
                 android:layout_width="wrap_content"
@@ -190,6 +320,40 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:nestedScrollingEnabled="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_funds_prev"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="\u25C0"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/primary"
+                    android:textColor="@color/primary" />
+                <TextView
+                    android:id="@+id/tv_funds_page"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_muted" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_funds_next"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="\u25B6"
+                    android:textSize="12sp"
+                    app:strokeColor="@color/primary"
+                    android:textColor="@color/primary" />
+            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>

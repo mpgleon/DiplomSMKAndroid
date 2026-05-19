@@ -54,7 +54,14 @@ dependencies {
     // BCrypt
     implementation(libs.bcrypt)
 
+    // Glide (image loading)
+    implementation(libs.glide)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.contrib) {
+        exclude(group = "com.android.support", module = "support-annotations")
+        exclude(group = "com.android.support", module = "support-v4")
+    }
 }
